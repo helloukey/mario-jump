@@ -1,0 +1,17 @@
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 15px 0px;
+}
+
+.mario-logo {
+    height: auto;
+    width: 100px;
+}
+
+.title {
+    font-size: 3rem;
+    color: #E52521;
+}

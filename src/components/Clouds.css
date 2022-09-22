@@ -1,0 +1,21 @@
+.clouds {
+    background-image: url("../assets/clouds.gif");
+    background-repeat: no-repeat;
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    animation-name: clouds-animation;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes clouds-animation {
+    0% {
+        left: 1250px;
+    }
+    100% {
+        left: -150px;
+    }
+}

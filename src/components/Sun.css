@@ -1,0 +1,10 @@
+.sun {
+    background-image: url("../assets/sun.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100px;
+    position: absolute;
+    top: 25px;
+    right: 100px;
+}

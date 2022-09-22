@@ -1,0 +1,39 @@
+.mario {
+    width: 5rem;
+    height: auto;
+    position: absolute;
+    bottom: 120px;
+    left: 40px;
+}
+
+.jump {
+    animation-name: jumping;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+}
+
+@keyframes jumping {
+    0% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 120px;
+    }
+}
+
+/* Mario Die */
+.die {
+    animation-name: die-animation;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+@keyframes die-animation {
+    25% {
+        bottom: 300px;
+        left: 80px;
+    }
+    100% {
+        bottom: -200px;
+    }
+}

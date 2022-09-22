@@ -1,0 +1,54 @@
+.obstacles-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.obstacle1, .obstacle2 {
+    height: 60px;
+    width: auto;
+    position: absolute;
+    bottom: 120px;
+}
+
+.obstacle1 {
+    left: 1250px;
+}
+.obstacle2 {
+    left: 2400px;
+}
+
+.obstacle1-move {
+    animation-name: obstacle1-animation;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.obstacle2-move {
+    animation-name: obstacle2-animation;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes obstacle1-animation {
+    0% {
+        left: 1250px;
+    }
+    100% {
+        left: -1200px;
+    }
+}
+
+@keyframes obstacle2-animation {
+    0% {
+        left: 2400px;
+    }
+    100% {
+        left: -2400px;
+    }
+}
