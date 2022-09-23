@@ -38,6 +38,7 @@
     }
 }
 
+/* Media Queries */
 @media (max-width: 1280px) {
     .mario {
         width: 4rem;

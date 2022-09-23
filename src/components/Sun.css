@@ -8,3 +8,16 @@
     top: 25px;
     right: 100px;
 }
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .sun {
+        width: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sun {
+        right: 50px;
+    }
+}
