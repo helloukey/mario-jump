@@ -2,12 +2,15 @@
     background-image: url("../assets/brick.svg");
     background-repeat: repeat-x;
     height: 120px;
-    width: 1000vw;
+    width: 300vw;
     position: absolute;
     bottom: 0px;
     left: 0px;
+}
+
+.brick-animate {
     animation-name: bricks;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }

@@ -15,7 +15,7 @@ const Mario = () => {
   const [isJumping, setIsJumping] = useState(false);
   const marioRef = useRef();
   const dispatch = useDispatch();
-  const die = useSelector(state => state.engine.die);
+  const die = useSelector((state) => state.engine.die);
 
   const obstacle1 = useSelector((state) => state.obstacle.obstacle1);
   const obstacle2 = useSelector((state) => state.obstacle.obstacle2);
@@ -25,71 +25,97 @@ const Mario = () => {
   // Jump audio
   const jump = useMemo(() => {
     return new Audio(jumpAudio);
-  },[])
+  }, []);
 
-  
   // Die
   const marioDie = useMemo(() => {
     return new Audio(dieAudio);
-  },[]);
+  }, []);
 
   const bgMusic = useMemo(() => {
     return new Audio(backgroundMusic);
-  },[]);
+  }, []);
 
   // Handling key press event.
-  const handleKey = useCallback((e) => {
-      if(isJumping === false && isJumping !== true) {
-        dispatch(setReady(true));
+  const handleKey = useCallback(
+    (e) => {
+      if (isJumping === false) {
+        if(!isPlay) {
+          dispatch(setReady(true));
+        }
         setIsJumping(true);
         jump.play();
         setTimeout(() => {
           setIsJumping(false);
         }, 300);
       }
-  },[isJumping, jump, dispatch]);
+    },
+    [isJumping, jump, dispatch, isPlay]
+  );
 
-
-  useEffect(() => { 
-  if( (mario < 200 && (obstacle1 < 100 && obstacle1 > 0)) ) {
-    dispatch(setDie(true));
-    marioDie.play();
-    dispatch(setReady(false));
-    setTimeout(() => {
-      dispatch(setDie(false));
-      dispatch(setScore(0));
-    }, 2000);
-  }
-  if( (mario < 200 && (obstacle2 < 100 && obstacle2 > 20)) ) {
-    dispatch(setDie(true));
-    marioDie.play();
-    dispatch(setReady(false));
-    setTimeout(() => {
-      dispatch(setDie(false));
-      dispatch(setScore(0));
-    }, 2000);
-  }
-  },[dispatch, mario, marioDie, obstacle1, obstacle2])
-
+  useEffect(() => {
+    if (mario < 200 && obstacle1 < 100 && obstacle1 > 0) {
+      dispatch(setDie(true));
+      marioDie.play();
+      dispatch(setReady(false));
+      setTimeout(() => {
+        dispatch(setDie(false));
+      }, 2000);
+      setTimeout(() => {
+        dispatch(setScore(0));
+      }, 100);
+    }
+    if (mario < 200 && obstacle2 < 100 && obstacle2 > 20) {
+      dispatch(setDie(true));
+      marioDie.play();
+      dispatch(setReady(false));
+      setTimeout(() => {
+        dispatch(setDie(false));
+      }, 2000);
+      setTimeout(() => {
+        dispatch(setScore(0));
+      }, 100);
+    }
+  }, [dispatch, mario, marioDie, obstacle1, obstacle2]);
 
   // Monitor key press.
   useEffect(() => {
     document.addEventListener("keydown", handleKey);
-    dispatch(marioPosition(parseInt(window.getComputedStyle(marioRef.current).getPropertyValue("bottom"))));
+    dispatch(
+      marioPosition(
+        parseInt(
+          window.getComputedStyle(marioRef.current).getPropertyValue("bottom")
+        )
+      )
+    );
 
-    if(isPlay) {
+    if (isPlay) {
       bgMusic.play();
     } else {
       bgMusic.pause();
       bgMusic.currentTime = 0;
     }
-  },[handleKey, dispatch, bgMusic, isPlay]);
+  }, [handleKey, dispatch, bgMusic, isPlay]);
 
   return (
     <div className="mario-container">
-        {!die && <img src={MarioCharacter} alt="" className={`mario ${isJumping ? "jump" : ""}`} ref={marioRef}/>}
-        {die && <img src={MarioCharacter} alt="" className={`mario ${die ? "die" : ""}`} ref={marioRef}/>}
+      {!die && (
+        <img
+          src={MarioCharacter}
+          alt=""
+          className={`mario ${isJumping ? "jump" : ""}`}
+          ref={marioRef}
+        />
+      )}
+      {die && (
+        <img
+          src={MarioCharacter}
+          alt=""
+          className={`mario ${die ? "die" : ""}`}
+          ref={marioRef}
+        />
+      )}
     </div>
-  )
-}
-export default Mario
+  );
+};
+export default Mario;
