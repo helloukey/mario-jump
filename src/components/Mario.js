@@ -47,7 +47,9 @@ const Mario = () => {
         jump.play();
         setTimeout(() => {
           setIsJumping(false);
-        }, 300);
+          jump.pause();
+          jump.currentTime = 0;
+        }, 400);
       }
     },
     [isJumping, jump, dispatch, isPlay]
