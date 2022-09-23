@@ -6,6 +6,10 @@
     width: 100px;
     position: absolute;
     top: 150px;
+    left: 1250px;
+}
+
+.birds-animate {
     animation-name: birds-animation;
     animation-duration: 30s;
     animation-timing-function: linear;

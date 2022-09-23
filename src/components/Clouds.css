@@ -5,6 +5,10 @@
     width: 100%;
     position: absolute;
     top: 20px;
+    left: 1250px;
+}
+
+.clouds-animate {
     animation-name: clouds-animation;
     animation-duration: 60s;
     animation-timing-function: linear;

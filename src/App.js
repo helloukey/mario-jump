@@ -10,12 +10,10 @@ import PressAnyKey from "./components/PressAnyKey";
 // redux
 import { useSelector } from "react-redux";
 import Score from "./components/Score";
-import { Suspense } from "react";
 
 function App() {
   const isPlay = useSelector((state) => state.engine.play);
   return (
-    <Suspense fallback={<p>Loading...</p>}>
     <div className="App">
       { !isPlay && <PressAnyKey /> }
       <Bricks />
@@ -26,7 +24,6 @@ function App() {
       <Obstacles />
       <Score />
     </div>
-    </Suspense>
   );
 }
 
