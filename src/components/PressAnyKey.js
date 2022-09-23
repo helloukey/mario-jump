@@ -3,7 +3,8 @@ import "./PressAnyKey.css";
 const PressAnyKey = () => {
   return (
     <div>
-        <p className="press-title">PRESS ANY KEY TO START!</p>
+        <p className="press-title">ENTER KEY - START GAME</p>
+        <p className="press-subtitle">SPACE KEY - JUMP!</p>
     </div>
   )
 }

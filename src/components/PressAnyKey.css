@@ -6,3 +6,12 @@
     transform: translate(-50%, -50%);
     color: #EEE;
 }
+
+.press-subtitle {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #EEE;
+}

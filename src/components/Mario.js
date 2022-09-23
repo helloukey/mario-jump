@@ -39,12 +39,12 @@ const Mario = () => {
   // Handling key press event.
   const handleKey = useCallback(
     (e) => {
-      if (isJumping === false) {
-        if(!isPlay) {
-          dispatch(setReady(true));
-        }
+      if(e.code === "Enter" && !isPlay) {
+        dispatch(setReady(true));
+      }
+      if (isJumping === false && e.code === "Space") {
         setIsJumping(true);
-        jump.play();
+          jump.play();
         setTimeout(() => {
           setIsJumping(false);
           jump.pause();
