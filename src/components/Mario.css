@@ -8,7 +8,7 @@
 
 .jump {
     animation-name: jumping;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in;
     animation-duration: 0.4s;
 }
 
