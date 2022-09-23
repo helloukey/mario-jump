@@ -6,7 +6,7 @@
     width: 100%;
     position: absolute;
     top: 20px;
-    left: 1250px;
+    left: 100vw;
 }
 
 .clouds-animate {
@@ -18,10 +18,10 @@
 
 @keyframes clouds-animation {
     0% {
-        left: 1250px;
+        left: 100vw;
     }
     100% {
-        left: -150px;
+        left: -15vw;
     }
 }
 
