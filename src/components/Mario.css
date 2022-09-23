@@ -2,7 +2,7 @@
     width: 5rem;
     height: auto;
     position: absolute;
-    bottom: 120px;
+    bottom: 12.5vh;
     left: 40px;
 }
 
@@ -14,10 +14,10 @@
 
 @keyframes jumping {
     0% {
-        bottom: 250px;
+        bottom: 25vh;
     }
     100% {
-        bottom: 120px;
+        bottom: 12.5vh;
     }
 }
 
@@ -30,11 +30,11 @@
 
 @keyframes die-animation {
     25% {
-        bottom: 300px;
-        left: 80px;
+        bottom: 30vh;
+        left: 8vh;
     }
     100% {
-        bottom: -200px;
+        bottom: -20vh;
     }
 }
 
