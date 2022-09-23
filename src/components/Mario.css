@@ -37,3 +37,25 @@
         bottom: -200px;
     }
 }
+
+@media (max-width: 1280px) {
+    .mario {
+        width: 4rem;
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mario {
+        width: 3rem;
+        bottom: 60px;
+    }
+}
+
+@media (max-width: 640px) {
+    .mario {
+        width: 2rem;
+        left: 20px;
+        bottom: 60px;
+    }
+}
