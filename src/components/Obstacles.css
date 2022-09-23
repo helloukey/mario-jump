@@ -15,10 +15,10 @@
 }
 
 .obstacle1 {
-    left: 1250px;
+    left: 120px;
 }
 .obstacle2 {
-    left: 2400px;
+    left: 240px;
 }
 
 .obstacle1-move {
@@ -50,5 +50,27 @@
     }
     100% {
         left: -2400px;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .obstacle1, .obstacle2 {
+        height: 50px;
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .obstacle1, .obstacle2 {
+        height: 40px;
+        bottom: 60px;
+    }
+}
+
+@media (max-width: 640px) {
+    .obstacle1, .obstacle2 {
+        height: 30px;
+        bottom: 60px;
     }
 }

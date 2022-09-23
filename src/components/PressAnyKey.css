@@ -1,17 +1,17 @@
-.press-title {
-    font-size: 1.5rem;
+.press-container {
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 1.5rem;
     color: #EEE;
+    text-align: center;
 }
 
-.press-subtitle {
-    font-size: 1.5rem;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #EEE;
+/* Media Queries */
+@media (max-width: 1024px) {
+    .press-container {
+        font-size: 1rem;
+    }
 }
