@@ -15,10 +15,10 @@
 }
 
 .obstacle1 {
-    left: 120px;
+    left: 120vw;
 }
 .obstacle2 {
-    left: 240px;
+    left: 240vw;
 }
 
 .obstacle1-move {
@@ -37,19 +37,19 @@
 
 @keyframes obstacle1-animation {
     0% {
-        left: 1250px;
+        left: 125vw;
     }
     100% {
-        left: -1200px;
+        left: -120vw;
     }
 }
 
 @keyframes obstacle2-animation {
     0% {
-        left: 2400px;
+        left: 240vw;
     }
     100% {
-        left: -2400px;
+        left: -240vw;
     }
 }
 
