@@ -1,4 +1,4 @@
-import "./PressAnyKey.css";
+import "./KeyMessage.css";
 
 const PressAnyKey = () => {
   return (

@@ -5,7 +5,7 @@ import Clouds from "./components/Clouds";
 import Mario from "./components/Mario";
 import Obstacles from "./components/Obstacles";
 import Sun from "./components/Sun";
-import PressAnyKey from "./components/PressAnyKey";
+import KeyMessage from "./components/KeyMessage";
 
 // redux
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ function App() {
   const isPlay = useSelector((state) => state.engine.play);
   return (
     <div className="App">
-      { !isPlay && <PressAnyKey /> }
+      { !isPlay && <KeyMessage /> }
       <Bricks />
       <Mario />
       <Sun />
