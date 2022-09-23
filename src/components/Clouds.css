@@ -1,6 +1,7 @@
 .clouds {
     background-image: url("../assets/clouds.gif");
     background-repeat: no-repeat;
+    background-size: contain;
     height: 120px;
     width: 100%;
     position: absolute;
