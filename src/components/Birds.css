@@ -6,7 +6,7 @@
     width: 100px;
     position: absolute;
     top: 150px;
-    left: 1250px;
+    left: 100vw;
 }
 
 .birds-animate {
@@ -18,10 +18,10 @@
 
 @keyframes birds-animation {
     0% {
-        left: 1250px;
+        left: 100vw;
     }
     100% {
-        left: -150px;
+        left: -15vw;
     }
 }
 
