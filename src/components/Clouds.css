@@ -24,3 +24,17 @@
         left: -150px;
     }
 }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .clouds {
+        height: 100px;
+    }
+}
+
+@media (max-width: 640px) {
+    .clouds {
+        height: 80px;
+        top: 25px;
+    }
+}

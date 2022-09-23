@@ -24,3 +24,18 @@
         left: -150px;
     }
 }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .birds {
+        width: 80px;
+        top: 125px;
+    }
+}
+
+@media (max-width: 640px) {
+    .birds {
+        width: 60px;
+        top: 100px;
+    }
+}
