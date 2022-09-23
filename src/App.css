@@ -12,3 +12,11 @@
   background: linear-gradient(0deg, rgba(255,134,134,1) 0%, rgba(2,233,242,1) 0%, rgba(44,127,247,1) 100%);
   overflow: hidden;
 }
+
+/* Media Queries */
+@media (max-width: 1280px) {
+  .App {
+    width: 95%;
+    border: 0.2rem solid #EEE;
+  }
+}
