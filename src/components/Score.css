@@ -3,3 +3,10 @@
     margin: 0.5rem;
     color: #EEE;
 }
+
+/* Media Queries */
+@media (max-width: 640px) {
+    .score {
+        font-size: 1rem;
+    }
+}
