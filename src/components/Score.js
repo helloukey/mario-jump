@@ -7,10 +7,11 @@ const Score = () => {
   const score = useSelector(state => state.engine.score);
   const lastScore = useSelector(state => state.engine.lastScore);
   const play = useSelector(state => state.engine.play);
+  const die = useSelector(state => state.engine.die);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(play) {
+    if(play && !die) {
       setTimeout(() => {
         dispatch(setScore(score + 1));
       }, 100);
@@ -18,7 +19,7 @@ const Score = () => {
      if(score && !play) {
         dispatch(setLastScore(score));
      }
-  },[dispatch, play, score, lastScore]);
+  },[dispatch, play, score, lastScore, die]);
   return (
     <div className="score-container">
         {play && <p className="score">Score: {score}</p>}
