@@ -5,7 +5,8 @@ const initialState = {
     die: false,
     speed: 0,
     score: 0,
-    lastScore: 0
+    lastScore: 0,
+    loadingScreen: true,
 }
 
 export const engineSlice = createSlice({
@@ -27,8 +28,11 @@ export const engineSlice = createSlice({
         setLastScore: (state, action) => {
             state.lastScore = action.payload;
         },
+        setLoadingScreen: (state, action) => {
+            state.loadingScreen = action.payload;
+        },
     }
 });
 
-export const { setReady, setDie, setSpeed, setScore, setLastScore } = engineSlice.actions;
+export const { setReady, setDie, setSpeed, setScore, setLastScore, setLoadingScreen } = engineSlice.actions;
 export default engineSlice.reducer;

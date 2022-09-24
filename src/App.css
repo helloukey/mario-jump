@@ -11,6 +11,8 @@
   background: rgb(255,134,134);
   background: linear-gradient(0deg, rgba(255,134,134,1) 0%, rgba(2,233,242,1) 0%, rgba(44,127,247,1) 100%);
   overflow: hidden;
+  user-select: none;
+  pointer-events: none;
 }
 
 /* Media Queries */
