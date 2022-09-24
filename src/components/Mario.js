@@ -21,6 +21,7 @@ const Mario = () => {
   const marioRef = useRef();
   const dispatch = useDispatch();
   const die = useSelector((state) => state.engine.die);
+  const loadingScreen = useSelector((state) => state.engine.loadingScreen);
 
   const isPlay = useSelector((state) => state.engine.play);
   // Mario positions & jump
@@ -57,10 +58,10 @@ const Mario = () => {
   // Handling key press event.
   const handleKey = useCallback(
     (e) => {
-      if (e.code === "Enter" && !isPlay) {
+      if (e.code === "Enter" && !isPlay && !die && !loadingScreen) {
         dispatch(setReady(true));
       }
-      if (mario_jump === false && e.code === "Space") {
+      if (mario_jump === false && e.code === "Space" && isPlay && !die && !loadingScreen) {
         dispatch(marioJumping(true));
         jump.play();
         setTimeout(() => {
@@ -70,11 +71,10 @@ const Mario = () => {
         }, 400);
       }
     },
-    [mario_jump, jump, dispatch, isPlay]
+    [mario_jump, jump, dispatch, isPlay, die, loadingScreen]
   );
 
   useEffect(() => {
-
     if (
       mario_left < obs1_left + obs1_width &&
       mario_left + mario_width > obs1_left &&
