@@ -73,28 +73,6 @@ const Mario = () => {
   );
 
   useEffect(() => {
-    // if (mario < 200 && obstacle1 < 100 && obstacle1 > 0) {
-    //   dispatch(setDie(true));
-    //   marioDie.play();
-    //   dispatch(setReady(false));
-    //   setTimeout(() => {
-    //     dispatch(setDie(false));
-    //   }, 2000);
-    //   setTimeout(() => {
-    //     dispatch(setScore(0));
-    //   }, 100);
-    // }
-    // if (mario < 200 && obstacle2 < 100 && obstacle2 > 20) {
-    //   dispatch(setDie(true));
-    //   marioDie.play();
-    //   dispatch(setReady(false));
-    //   setTimeout(() => {
-    //     dispatch(setDie(false));
-    //   }, 2000);
-    //   setTimeout(() => {
-    //     dispatch(setScore(0));
-    //   }, 100);
-    // }
 
     if (
       mario_left < obs1_left + obs1_width &&

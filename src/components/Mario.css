@@ -2,22 +2,19 @@
     width: 5rem;
     height: auto;
     position: absolute;
-    bottom: 12.5vh;
+    bottom: 12.4vh;
     left: 40px;
 }
 
 .jump {
     animation-name: jumping;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
     animation-duration: 0.4s;
 }
 
 @keyframes jumping {
     0% {
-        bottom: 25vh;
-    }
-    100% {
-        bottom: 12.5vh;
+        transform: translateY(-15vh);
     }
 }
 
