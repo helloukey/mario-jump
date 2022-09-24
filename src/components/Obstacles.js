@@ -5,7 +5,15 @@ import { useRef, useEffect } from "react";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { obstacle1Position, obstacle2Position } from "../redux/obstacleSlice";
+import {
+  obstacle1Height,
+  obstacle1Left,
+  obstacle1Top,
+  obstacle1Width,
+  obstacle2Height,
+  obstacle2Left,
+  obstacle2Top,
+  obstacle2Width } from "../redux/obstacleSlice";
 import { setSpeed } from "../redux/engineSlice";
 
 const Obstacles = () => {
@@ -17,24 +25,15 @@ const Obstacles = () => {
 
   useEffect(() => {
     setInterval(() => {
-      dispatch(
-        obstacle1Position(
-          parseInt(
-            window
-              .getComputedStyle(obstacle1Ref.current)
-              .getPropertyValue("left")
-          )
-        )
-      );
-      dispatch(
-        obstacle2Position(
-          parseInt(
-            window
-              .getComputedStyle(obstacle2Ref.current)
-              .getPropertyValue("left")
-          )
-        )
-      );
+      dispatch(obstacle1Height(obstacle1Ref.current.getBoundingClientRect().height));
+      dispatch(obstacle1Left(obstacle1Ref.current.getBoundingClientRect().left));
+      dispatch(obstacle1Top(obstacle1Ref.current.getBoundingClientRect().top));
+      dispatch(obstacle1Width(obstacle1Ref.current.getBoundingClientRect().width));
+      
+      dispatch(obstacle2Height(obstacle2Ref.current.getBoundingClientRect().height));
+      dispatch(obstacle2Left(obstacle2Ref.current.getBoundingClientRect().left));
+      dispatch(obstacle2Top(obstacle2Ref.current.getBoundingClientRect().top));
+      dispatch(obstacle2Width(obstacle2Ref.current.getBoundingClientRect().width));
     }, 100);
   }, [dispatch]);
 
@@ -44,7 +43,7 @@ const Obstacles = () => {
         dispatch(setSpeed(0.0001));
       }, 1000);
     }
-  },[speed, dispatch])
+  },[speed, dispatch]);
 
   return (
     <div className="obstacles-container">
