@@ -11,6 +11,7 @@ import LoadingScreen from "./components/LoadingScreen";
 // redux
 import { useSelector } from "react-redux";
 import Score from "./components/Score";
+import MobileControls from "./components/MobileControls";
 
 function App() {
   const isPlay = useSelector((state) => state.engine.play);
@@ -28,6 +29,7 @@ function App() {
         <Obstacles />
         <Score />
       </div>
+      <MobileControls />
     </>
   );
 }

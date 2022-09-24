@@ -1,11 +1,12 @@
 import "./Mario.css";
 import MarioCharacter from "../assets/mario-run.gif";
-import { useEffect, useState, useRef, useCallback, useMemo } from "react";
+import { useEffect, useRef, useCallback, useMemo } from "react";
 import jumpAudio from "../assets/audio/mario-jump.mp3";
 import backgroundMusic from "../assets/audio/running-about.mp3";
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import {
+  marioJumping,
   marioHeight,
   marioLeft,
   marioTop,
@@ -17,13 +18,13 @@ import { setReady, setDie, setScore } from "../redux/engineSlice";
 import dieAudio from "../assets/audio/mario-died.mp3";
 
 const Mario = () => {
-  const [isJumping, setIsJumping] = useState(false);
   const marioRef = useRef();
   const dispatch = useDispatch();
   const die = useSelector((state) => state.engine.die);
 
   const isPlay = useSelector((state) => state.engine.play);
-  // Mario positions
+  // Mario positions & jump
+  const mario_jump = useSelector((state) => state.mario.jumping);
   const mario_height = useSelector((state) => state.mario.height);
   const mario_left = useSelector((state) => state.mario.left);
   const mario_top = useSelector((state) => state.mario.top);
@@ -59,17 +60,17 @@ const Mario = () => {
       if (e.code === "Enter" && !isPlay) {
         dispatch(setReady(true));
       }
-      if (isJumping === false && e.code === "Space") {
-        setIsJumping(true);
+      if (mario_jump === false && e.code === "Space") {
+        dispatch(marioJumping(true));
         jump.play();
         setTimeout(() => {
-          setIsJumping(false);
+          dispatch(marioJumping(false));
           jump.pause();
           jump.currentTime = 0;
         }, 400);
       }
     },
-    [isJumping, jump, dispatch, isPlay]
+    [mario_jump, jump, dispatch, isPlay]
   );
 
   useEffect(() => {
@@ -146,7 +147,7 @@ const Mario = () => {
         <img
           src={MarioCharacter}
           alt=""
-          className={`mario ${isJumping ? "jump" : ""}`}
+          className={`mario ${mario_jump ? "jump" : ""}`}
           ref={marioRef}
         />
       )}
