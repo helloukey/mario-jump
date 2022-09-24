@@ -8,6 +8,7 @@ import jumpAudio from "../assets/audio/mario-jump.mp3";
 const MobileControls = () => {
   const isPlay = useSelector((state) => state.engine.play);
   const mario_jump = useSelector((state) => state.mario.jumping);
+  const isDie = useSelector((state) => state.engine.die);
   const dispatch = useDispatch();
 
   const jump = useMemo(() => {
@@ -15,7 +16,7 @@ const MobileControls = () => {
   }, []);
 
   const handleStart = () => {
-    if(!isPlay) {
+    if(!isPlay && !isDie) {
         dispatch(setReady(true));
     }
   };
@@ -32,8 +33,9 @@ const MobileControls = () => {
    };
   return (
     <div className="mobile-controls-container">
-        {!isPlay && <button className="control-start-button" onClick={handleStart}>START</button>}
-        {isPlay && <button className="control-jump-button" onClick={handleJump}>JUMP</button>}
+        {!isPlay && !isDie && <button className="control-start-button" onClick={handleStart}>START</button>}
+        {isDie && !isPlay && <button className="control-die-button">GAME OVER</button>}
+        {isPlay && !isDie && <button className="control-jump-button" onClick={handleJump}>JUMP</button>}
     </div>
   )
 }

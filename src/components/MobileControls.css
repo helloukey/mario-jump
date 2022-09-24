@@ -16,7 +16,7 @@
     margin: auto;
 }
 
-.control-start-button, .control-jump-button {
+.control-start-button, .control-jump-button, .control-die-button {
     font-size: 2rem;
     padding: 0.5rem 2rem;
     border: none;
@@ -30,7 +30,7 @@
     filter: saturate(10);
 }
 
-.control-start-button {
+.control-start-button, .control-die-button {
     background-color: #E52521;
 }
 
