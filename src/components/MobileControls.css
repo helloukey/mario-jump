@@ -23,6 +23,7 @@
     border-radius: 0.2rem;
     cursor: pointer;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    user-select: none;
 }
 
 .control-start-button:hover, .control-jump-button:hover {
