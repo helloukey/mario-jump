@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mario-jump/static/css/main.9e897b8f.css",
-    "main.js": "/mario-jump/static/js/main.f099bfed.js",
+    "main.css": "/mario-jump/static/css/main.cf010bd9.css",
+    "main.js": "/mario-jump/static/js/main.fdaa3814.js",
     "static/media/running-about.mp3": "/mario-jump/static/media/running-about.d1d8b7c0e0b97bddeebf.mp3",
     "static/media/brick.svg": "/mario-jump/static/media/brick.44708ef6c516df1897fc.svg",
     "static/media/mario-run.gif": "/mario-jump/static/media/mario-run.fd7bdc0892c38f605211.gif",
@@ -14,11 +14,11 @@
     "static/media/sun.gif": "/mario-jump/static/media/sun.660dbb9207c401cc1488.gif",
     "static/media/mario-jump.mp3": "/mario-jump/static/media/mario-jump.007acee8d04f16104409.mp3",
     "index.html": "/mario-jump/index.html",
-    "main.9e897b8f.css.map": "/mario-jump/static/css/main.9e897b8f.css.map",
-    "main.f099bfed.js.map": "/mario-jump/static/js/main.f099bfed.js.map"
+    "main.cf010bd9.css.map": "/mario-jump/static/css/main.cf010bd9.css.map",
+    "main.fdaa3814.js.map": "/mario-jump/static/js/main.fdaa3814.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e897b8f.css",
-    "static/js/main.f099bfed.js"
+    "static/css/main.cf010bd9.css",
+    "static/js/main.fdaa3814.js"
   ]
 }
