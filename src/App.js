@@ -12,6 +12,7 @@ import LoadingScreen from "./components/LoadingScreen";
 import { useSelector } from "react-redux";
 import Score from "./components/Score";
 import MobileControls from "./components/MobileControls";
+import Footer from "./components/Footer";
 
 function App() {
   const isPlay = useSelector((state) => state.engine.play);
@@ -30,6 +31,7 @@ function App() {
         <Score />
       </div>
       <MobileControls />
+      <Footer />
     </>
   );
 }

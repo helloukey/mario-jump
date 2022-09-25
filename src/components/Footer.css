@@ -1,0 +1,13 @@
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    position: fixed;
+    bottom: 20px;
+    color: #EEE;
+    z-index: 100;
+}
+
+.copyright-link {
+    color: #FBD000;
+}
