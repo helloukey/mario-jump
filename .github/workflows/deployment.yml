@@ -1,0 +1,61 @@
+name: Test and Deploy
+on: [push, pull_request]
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
+            - name: Cypress Run
+              uses: cypress-io/github-action@v6
+    build:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
+            - name: Build Project
+              run: npm run build
+            - name: Upload Build
+              uses: actions/upload-artifact@v4
+              with:
+                name: build
+                path: build
+                if-no-files-found: error
+    deploy:
+        needs: build
+        # Only deploy for the main branch
+        if: github.ref == 'refs/heads/main'
+        permissions:
+            pages: write
+            id-token: write
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
+            - name: Download Build
+              uses: actions/download-artifact@v4
+              with:
+                name: build
+                path: build
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+              with:
+                artifact_name: build
+    
