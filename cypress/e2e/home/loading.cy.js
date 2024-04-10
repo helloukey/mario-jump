@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("Check contents of the landing page", () => {
+describe("Check contents of the loading screen", () => {
   // Visit the landing page
   beforeEach(() => {
     cy.visit("/");
@@ -19,14 +19,6 @@ describe("Check contents of the landing page", () => {
       cy.getCypress("loading-loading-text").should("contain.text", "Loading...");
     });
 
-    // Check for the enter button
-    it("Check for the enter button", () => {
-      cy.wait(6000);
-      cy.getCypress("loading-enter-button").should("exist");
-      cy.getCypress("loading-enter-button").should("be.visible");
-      cy.getCypress("loading-enter-button").should("contain.text", "ENTER");
-    });
-
     // Check for the footer div
     it("Check for the footer div", () => {
       cy.getCypress("footer-copyright-div").should("exist");
@@ -40,5 +32,14 @@ describe("Check contents of the landing page", () => {
       cy.getCypress("footer-copyright-link").should("be.visible");
       cy.getCypress("footer-copyright-link").should("contain.text", "Kunal Ukey");
       cy.getCypress("footer-copyright-link").should("have.attr", "href", "https://github.com/helloukey");
+    });
+
+    // Check for the enter button
+    it("Check for the enter button", () => {
+      cy.wait(6000);
+      cy.getCypress("loading-enter-button").should("exist");
+      cy.getCypress("loading-enter-button").should("be.visible");
+      cy.getCypress("loading-enter-button").should("contain.text", "ENTER");
+      cy.getCypress("loading-enter-button").click();
     });
 })

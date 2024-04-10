@@ -20,7 +20,7 @@ const Birds = () => {
 
   return (
     <div className="birds-container">
-        <div className={isReady ? "birds birds-animate" : "birds"}></div>
+        <div className={isReady ? "birds birds-animate" : "birds"} data-cy="birds"></div>
     </div>
   )
 }
