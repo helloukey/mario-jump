@@ -8,7 +8,7 @@ const Clouds = () => {
   useEffect(() => {
     const setLoad = () => setIsReady(true);
 
-    if(document.readyState === "complete") {
+    if (document.readyState === "complete") {
       setLoad();
     } else {
       window.addEventListener("load", setLoad);
@@ -16,12 +16,15 @@ const Clouds = () => {
       // return cleanup function
       return () => window.removeEventListener("load", setLoad);
     }
-  },[]);
+  }, []);
 
   return (
     <div className="clouds-container">
-        <div className={isReady ? "clouds clouds-animate" : "clouds"} data-cy="clouds"></div>
+      <div
+        className={isReady ? "clouds clouds-animate" : "clouds"}
+        data-cy="clouds"
+      ></div>
     </div>
-  )
-}
-export default Clouds
+  );
+};
+export default Clouds;

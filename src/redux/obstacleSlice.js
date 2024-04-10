@@ -92,6 +92,6 @@ export const {
   obstacle2Top,
   obstacle2Width,
   obstacle2X,
-  obstacle2Y
+  obstacle2Y,
 } = obstacleSlice.actions;
 export default obstacleSlice.reducer;

@@ -1,0 +1,5 @@
+{
+  "*.{js,scss,css}": [
+    "npx eslint --fix --max-warnings=0"
+  ]
+}

@@ -1,14 +1,14 @@
 .copyright {
-    width: 100%;
-    font-size: 0.8rem;
-    text-align: center;
-    margin: auto;
-    position: fixed;
-    bottom: 20px;
-    color: #EEE;
-    z-index: 100;
+  width: 100%;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: auto;
+  position: fixed;
+  bottom: 20px;
+  color: #eee;
+  z-index: 100;
 }
 
 .copyright-link {
-    color: #FBD000;
+  color: #fbd000;
 }

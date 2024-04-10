@@ -35,11 +35,11 @@ const Mario = () => {
   const obs1_left = useSelector((state) => state.obstacle.obs1Left);
   const obs1_top = useSelector((state) => state.obstacle.obs1Top);
   const obs1_width = useSelector((state) => state.obstacle.obs1Width);
-    // Obstacle2 positions
-    const obs2_height = useSelector((state) => state.obstacle.obs2Height);
-    const obs2_left = useSelector((state) => state.obstacle.obs2Left);
-    const obs2_top = useSelector((state) => state.obstacle.obs2Top);
-    const obs2_width = useSelector((state) => state.obstacle.obs2Width);
+  // Obstacle2 positions
+  const obs2_height = useSelector((state) => state.obstacle.obs2Height);
+  const obs2_left = useSelector((state) => state.obstacle.obs2Left);
+  const obs2_top = useSelector((state) => state.obstacle.obs2Top);
+  const obs2_width = useSelector((state) => state.obstacle.obs2Width);
 
   // Jump audio
   const jump = useMemo(() => {
@@ -61,7 +61,13 @@ const Mario = () => {
       if (e.code === "Enter" && !isPlay && !die && !loadingScreen) {
         dispatch(setReady(true));
       }
-      if (mario_jump === false && e.code === "Space" && isPlay && !die && !loadingScreen) {
+      if (
+        mario_jump === false &&
+        e.code === "Space" &&
+        isPlay &&
+        !die &&
+        !loadingScreen
+      ) {
         dispatch(marioJumping(true));
         jump.play();
         setTimeout(() => {

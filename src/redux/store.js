@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 import marioReducer from "./marioSlice";
 import obstacleReducer from "./obstacleSlice";
 import engineReducer from "./engineSlice";
