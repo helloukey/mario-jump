@@ -12,6 +12,8 @@ jobs:
                 node-version: 20
             - name: Cypress Run
               uses: cypress-io/github-action@v6
+              with:
+                start: npm start
     build:
         needs: test
         runs-on: ubuntu-latest
