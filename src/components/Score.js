@@ -4,27 +4,35 @@ import { setScore, setLastScore } from "../redux/engineSlice";
 import "./Score.css";
 
 const Score = () => {
-  const score = useSelector(state => state.engine.score);
-  const lastScore = useSelector(state => state.engine.lastScore);
-  const play = useSelector(state => state.engine.play);
-  const die = useSelector(state => state.engine.die);
+  const score = useSelector((state) => state.engine.score);
+  const lastScore = useSelector((state) => state.engine.lastScore);
+  const play = useSelector((state) => state.engine.play);
+  const die = useSelector((state) => state.engine.die);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(play && !die) {
+    if (play && !die) {
       setTimeout(() => {
         dispatch(setScore(score + 1));
       }, 100);
-     }
-     if(score && !play) {
-        dispatch(setLastScore(score));
-     }
-  },[dispatch, play, score, lastScore, die]);
+    }
+    if (score && !play) {
+      dispatch(setLastScore(score));
+    }
+  }, [dispatch, play, score, lastScore, die]);
   return (
     <div className="score-container">
-        {play && <p className="score" data-cy="score-text">Score: {score}</p>}
-        {!play && <p className="score" data-cy="last-score-text">Score: {lastScore}</p>}
+      {play && (
+        <p className="score" data-cy="score-text">
+          Score: {score}
+        </p>
+      )}
+      {!play && (
+        <p className="score" data-cy="last-score-text">
+          Score: {lastScore}
+        </p>
+      )}
     </div>
-  )
-}
-export default Score
+  );
+};
+export default Score;

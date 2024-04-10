@@ -16,8 +16,17 @@ const LoadingScreen = () => {
 
   return (
     <div className="loading-screen-container">
-      <img src={MarioCharacter} alt="" className="loading-mario" data-cy="loading-mario" />
-      {!isReady && <h1 className="loading-title" data-cy="loading-loading-text">Loading...</h1>}
+      <img
+        src={MarioCharacter}
+        alt=""
+        className="loading-mario"
+        data-cy="loading-mario"
+      />
+      {!isReady && (
+        <h1 className="loading-title" data-cy="loading-loading-text">
+          Loading...
+        </h1>
+      )}
       {isReady && (
         <button
           className="enter-button"

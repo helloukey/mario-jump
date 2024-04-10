@@ -8,7 +8,7 @@ const Birds = () => {
   useEffect(() => {
     const setLoad = () => setIsReady(true);
 
-    if(document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       setLoad();
     } else {
       window.addEventListener("load", setLoad);
@@ -16,12 +16,15 @@ const Birds = () => {
       // return cleanup function
       return () => window.removeEventListener("load", setLoad);
     }
-   },[]);
+  }, []);
 
   return (
     <div className="birds-container">
-        <div className={isReady ? "birds birds-animate" : "birds"} data-cy="birds"></div>
+      <div
+        className={isReady ? "birds birds-animate" : "birds"}
+        data-cy="birds"
+      ></div>
     </div>
-  )
-}
-export default Birds
+  );
+};
+export default Birds;
