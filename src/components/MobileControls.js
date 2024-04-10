@@ -33,9 +33,9 @@ const MobileControls = () => {
    };
   return (
     <div className="mobile-controls-container">
-        {!isPlay && !isDie && <button className="control-start-button" onClick={handleStart}>START</button>}
-        {isDie && !isPlay && <button className="control-die-button">GAME OVER</button>}
-        {isPlay && !isDie && <button className="control-jump-button" onClick={handleJump}>JUMP</button>}
+        {!isPlay && !isDie && <button className="control-start-button" onClick={handleStart} data-cy="start-button">START</button>}
+        {isDie && !isPlay && <button className="control-die-button" data-cy="game-over-button">GAME OVER</button>}
+        {isPlay && !isDie && <button className="control-jump-button" onClick={handleJump} data-cy="jump-button">JUMP</button>}
     </div>
   )
 }

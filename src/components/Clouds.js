@@ -20,7 +20,7 @@ const Clouds = () => {
 
   return (
     <div className="clouds-container">
-        <div className={isReady ? "clouds clouds-animate" : "clouds"}></div>
+        <div className={isReady ? "clouds clouds-animate" : "clouds"} data-cy="clouds"></div>
     </div>
   )
 }

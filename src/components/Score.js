@@ -22,8 +22,8 @@ const Score = () => {
   },[dispatch, play, score, lastScore, die]);
   return (
     <div className="score-container">
-        {play && <p className="score">Score: {score}</p>}
-        {!play && <p className="score">Score: {lastScore}</p>}
+        {play && <p className="score" data-cy="score-text">Score: {score}</p>}
+        {!play && <p className="score" data-cy="last-score-text">Score: {lastScore}</p>}
     </div>
   )
 }

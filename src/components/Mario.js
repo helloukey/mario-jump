@@ -149,6 +149,7 @@ const Mario = () => {
           alt=""
           className={`mario ${mario_jump ? "jump" : ""}`}
           ref={marioRef}
+          data-cy="mario-running"
         />
       )}
       {die && (

@@ -19,7 +19,7 @@ const Bricks = () => {
   },[]);
   return (
     <div className="bricks-container">
-        <div className={isReady ? "brick brick-animate" : "brick"}/>
+        <div className={isReady ? "brick brick-animate" : "brick"} data-cy="brick" />
     </div>
   )
 }
