@@ -29,11 +29,9 @@ jobs:
             - name: Build Project
               run: npm run build
             - name: Upload Build
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-pages-artifact@v3
               with:
-                name: build
                 path: build
-                if-no-files-found: error
     deploy:
         needs: build
         # Only deploy for the main branch
@@ -52,14 +50,7 @@ jobs:
               uses: actions/setup-node@v4
               with:
                 node-version: 20
-            - name: Download Build
-              uses: actions/download-artifact@v4
-              with:
-                name: build
-                path: build
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v3
-              with:
-                artifact_name: build
+              uses: actions/deploy-pages@v4
     
