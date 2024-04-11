@@ -1,6 +1,0 @@
-!.prettierrc.js
-.gitignore
-.next
-build/
-node_modules
-cypress
